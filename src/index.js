@@ -19,8 +19,10 @@ app.use(indexRoutes)
 app.use(express.static(join(__dirname, 'public')))
 
 app.get("/",(req,res)=>res.render('index'))
-app.get("/about",(req,res)=>res.render('about'))
+app.get("/aboutme",(req,res)=>res.render('aboutme'))
 app.get("/contact",(req,res)=>res.render('contact'))
-
+app.get("/projects", (req, res) => {
+    res.render('projects', { title: 'Proyectos' });
+});
 app.listen(process.env.PORT || port)
 console.log("el servidpor esta activo en el puerto", 3000);
